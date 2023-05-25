@@ -9,7 +9,7 @@ const {
   IP_SERVER,
 } = require("./constansts");
 
-const port = process.env.PORT || 3900;
+const port = process.env.POST || 3900;
 
 mongoose.connect(
     `mongodb+srv://${DB_USER}:${encodeURIComponent(
