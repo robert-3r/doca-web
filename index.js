@@ -11,10 +11,15 @@ const {
 
 const port = process.env.PORT || 3900;
 
-mongoose.connect(
+mongoose
+  .connect(
     `mongodb+srv://${DB_USER}:${encodeURIComponent(
       DB_PASSWORD
-    )}@${DB_HOST}/?retryWrites=true&w=majority`
+    )}@${DB_HOST}/?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
   )
   .then(() => {
     app.listen(port, () => {
